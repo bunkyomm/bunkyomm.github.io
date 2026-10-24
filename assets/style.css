@@ -1,0 +1,183 @@
+:root {
+    --accent: #c0392b;
+    --bg: #faf8f5;
+    --text: #222;
+    --muted: #666;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.hero {
+    position: relative;
+    height: 46vh;
+    min-height: 320px;
+    max-height: 460px;
+    background: #222 url('./images/header.jpg') center 40% / cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.05) 0%, rgba(10,10,10,0.25) 55%, rgba(10,10,10,0.78) 100%);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+    box-sizing: border-box;
+}
+.hero-eyebrow {
+    margin: 0 0 10px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.22em;
+    color: rgba(255,255,255,0.78);
+}
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(26px, 5vw, 40px);
+    color: #fff;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+}
+.hero-sub {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.88);
+    letter-spacing: 0.02em;
+}
+
+main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 60px;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+@media (max-width: 560px) {
+    .links { grid-template-columns: 1fr; }
+}
+
+.link-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 28px 24px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.09);
+    border-color: #e8d9d5;
+}
+.link-card-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+.link-card-icon svg { width: 100%; height: 100%; }
+.link-card-title { font-size: 17px; font-weight: bold; letter-spacing: 0.01em; }
+.link-card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.about, .history, .contact {
+    margin-bottom: 40px;
+}
+h2 {
+    font-size: 18px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+    margin-bottom: 14px;
+}
+.about p, .contact p {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 12px;
+}
+.about a, .contact a { color: var(--accent); text-decoration: none; font-weight: bold; }
+.about a:hover, .contact a:hover { text-decoration: underline; }
+
+.history-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.history-list li {
+    display: flex;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+.history-list li:last-child { border-bottom: none; }
+.history-year {
+    flex: 0 0 72px;
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--accent);
+    padding-top: 1px;
+}
+.history-list p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+@media (max-width: 480px) {
+    .history-list li { gap: 10px; }
+    .history-year { flex-basis: 60px; font-size: 12px; }
+}
+
+.atmark {
+    height: 0.95em;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 1px;
+    position: relative;
+    top: -0.05em;
+}
+
+.members-heading {
+    font-weight: bold;
+    margin-bottom: 8px !important;
+}
+.members-list {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #333;
+}
+.members-list li { margin-bottom: 6px; }
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    padding: 20px;
+}
+footer a { color: #999; }
+footer a:hover { color: var(--accent); }
+footer p { margin: 0 0 6px; }
